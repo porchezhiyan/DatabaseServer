@@ -3,7 +3,6 @@ import xml.etree.ElementTree as ET
 
 tree = ET.parse('sys_data.xml')
 root = tree.getroot()
-root1 = tree.getroot()
 
 urls = (
     '/provider/', 'list_provider',
@@ -25,10 +24,10 @@ class list_provider:
 class list_subscriber:
     def GET(self):
         output = 'subscribers:['
-        for child1 in root1:
-            if child1.tag == "subscriber":
-                print ('child', child1.tag, child1.attrib)
-                output += str(child1.attrib) + ','
+        for child in root:
+            if child.tag == "subscriber":
+                print ('child', child.tag, child.attrib)
+                output += str(child.attrib) + ','
         output += ']'
         return output
 if __name__ == "__main__":
