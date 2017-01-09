@@ -1,5 +1,4 @@
 import web
-import xml.etree.ElementTree as ET
 import MySQLdb
 import json
 import collections
@@ -13,8 +12,6 @@ urls = (
 
 app = web.application(urls, globals())
 
-datap={}
-datas={}
 
 
 
