@@ -45,15 +45,15 @@ class list_provider:
 
 class list_subscriber:        
     def GET(self):
-        cur.execute("""SELECT service, name, age FROM providers""")
+        cur.execute("""SELECT id, name, age FROM subscribers""")
         rows = cur.fetchall()
         objects_list = []       
         for row in rows:
-            d = collections.OrderedDict()
-            d['id'] = row[0]
-            d['name'] = row[1]
-            d['age'] = row[2]
-            objects_list.append(d)
+            d1 = collections.OrderedDict()
+            d1['id'] = row[0]
+            d1['name'] = row[1]
+            d1['age'] = row[2]
+            objects_list.append(d1)
 
         j2 = json.dumps(objects_list)
         return j2
